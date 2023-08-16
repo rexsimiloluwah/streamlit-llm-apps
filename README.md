@@ -10,6 +10,34 @@ This repository showcases a suite of experimental LLM applications built using S
 - LangChain
 - OpenAI API (`gpt-3.5-turbo`)
 
+### Run the App
+
+#### Clone the Repository
+
+```bash
+$ git clone github.com/rexsimiloluwah/streamlit-llm-apps
+$ cd streamlit-llm-apps
+```
+
+#### Install the dependencies
+
+You can advisably create a virtual environment
+
+```bash
+$ pip install -r requirements.txt
+```
+
+### Run the app
+
+```bash
+$ streamlit run src/main.py
+
+# Using make
+$ make run-app
+```
+
+####
+
 ### Example Applications
 
 #### 1. Simple Document QA App
