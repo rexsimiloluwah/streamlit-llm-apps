@@ -1,6 +1,7 @@
-from PyPDF2 import PdfReader 
-import streamlit as st
 from typing import List 
+
+import streamlit as st
+from PyPDF2 import PdfReader 
 from langchain.schema.document import Document 
 from langchain.document_loaders import WebBaseLoader
 
@@ -19,7 +20,7 @@ def extract_pages(file) -> List[Document]:
             Document(
                 page_content=text,
                 metadata={
-                    "source": file.name,
+                    "source": file.name if type(file) == st.runtime.uploaded_file_manager.UploadedFile else "",
                     "page": i
                 }
         ))

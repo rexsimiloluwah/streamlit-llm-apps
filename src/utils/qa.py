@@ -6,9 +6,13 @@ from langchain.vectorstores import DocArrayInMemorySearch
 from langchain.prompts import PromptTemplate
 
 class SimpleDocumentQA:
-    def __init__(self,llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0), chain_type: str = "stuff"):
+    def __init__(self, openai_api_key: str, chain_type: str = "stuff"):
         self._chain_type = chain_type 
-        self._llm = llm 
+        self._llm = ChatOpenAI(
+            model_name="gpt-3.5-turbo",
+            openai_api_key=openai_api_key,
+            temperature=0
+        )
         self._db = None 
     
     def load_db(self, docs):

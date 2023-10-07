@@ -1,4 +1,4 @@
 .PHONY: run-app
 
 run-app:
-	streamlit run src/main.py 
+	streamlit run src/Home.py 
